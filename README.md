@@ -55,7 +55,7 @@ Responsive design required dynamically recalculating chart dimensions and margin
 
 ## Future Enhancements
 
-- Support for additional chart types (e.g., pie, radar)  
+- Support for additional chart types (e.g., pie)  
 - Advanced filter options (e.g., product category, region)  
 - Dark mode support  
 - Unit and integration tests  
