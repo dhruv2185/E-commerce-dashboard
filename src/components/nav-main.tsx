@@ -1,7 +1,7 @@
 "use client"
 
+import { usePathname } from "next/navigation"
 import { IconCirclePlusFilled, IconMail, type Icon } from "@tabler/icons-react"
-
 import { Button } from "@/components/ui/button"
 import {
   SidebarGroup,
@@ -11,6 +11,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
+import clsx from "clsx"
 
 export function NavMain({
   items,
@@ -21,42 +22,35 @@ export function NavMain({
     icon?: Icon
   }[]
 }) {
+  const pathname = usePathname()
+
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
         <SidebarMenu>
-          <SidebarMenuItem className="flex items-center gap-2">
-            <SidebarMenuButton
-              tooltip="Made by Suman"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
-            >
-              <Link href="/" className="flex items-center gap-2">
-                <span className="sr-only">Made by Suman</span>
-                <IconCirclePlusFilled />
-                <span>Suman using @shadcn</span>
-              </Link>
-            </SidebarMenuButton>
-            <Button
-              size="icon"
-              className="size-8 group-data-[collapsible=icon]:opacity-0"
-              variant="outline"
-            >
-              <IconMail />
-              <span className="sr-only">Inbox</span>
-            </Button>
-          </SidebarMenuItem>
-        </SidebarMenu>
-        <SidebarMenu>
-          {items.map((item) => (
-            <SidebarMenuItem key={item.title}>
-              <Link href={item.url} className="flex items-center gap-2">
-                <SidebarMenuButton tooltip={item.title}>
-                  {item.icon && <item.icon className="w-4 h-4" />}
-                  <span>{item.title}</span>
-                </SidebarMenuButton>
-              </Link>
-            </SidebarMenuItem>
-          ))}
+          {items.map((item) => {
+            const isActive = pathname === item.url
+
+            return (
+              <SidebarMenuItem key={item.title}>
+                <Link href={item.url} className="flex items-center gap-2 w-full">
+                  <SidebarMenuButton
+                    tooltip={item.title}
+                    className={clsx(
+                      "w-full flex items-center gap-2 px-3 py-7 rounded-md transition-colors",
+                      {
+                        "bg-muted text-primary font-semibold": isActive,
+                        "hover:bg-muted": !isActive,
+                      }
+                    )}
+                  >
+                    {item.icon && <item.icon className="w-4 h-4" />}
+                    <span>{item.title}</span>
+                  </SidebarMenuButton>
+                </Link>
+              </SidebarMenuItem>
+            )
+          })}
         </SidebarMenu>
       </SidebarGroupContent>
     </SidebarGroup>

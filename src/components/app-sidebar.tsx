@@ -1,7 +1,16 @@
 "use client"
 
 import * as React from "react"
-import { IconChartBar, IconInnerShadowTop, IconSettings } from "@tabler/icons-react"
+import {
+  IconChartAreaLine,
+  IconChartBar,
+  IconChartRadar,
+  IconChartScatter,
+  IconChartTreemap,
+  IconHome,
+  IconInnerShadowTop,
+  IconSettings,
+} from "@tabler/icons-react"
 import { NavMain } from "@/components/nav-main"
 import { NavUser } from "@/components/nav-user"
 import {
@@ -17,11 +26,16 @@ import Link from "next/link"
 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "dhruv2185",
+    email: "dhruvghevariya2002@gmail.com",
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
+    {
+      title: "Dashboard",
+      url: "/",
+      icon: IconHome,
+    },
     {
       title: "Bar Charts",
       url: "/bar-charts",
@@ -30,12 +44,22 @@ const data = {
     {
       title: "Line Charts",
       url: "/line-charts",
-      icon: IconChartBar,
+      icon: IconChartAreaLine,
     },
     {
       title: "Scatter Plots",
       url: "/scatter-plots",
-      icon: IconSettings,
+      icon: IconChartScatter,
+    },
+    {
+      title: " Tree Map",
+      url: "/tree-map",
+      icon: IconChartTreemap,
+    },
+    {
+      title: "Radar Chart",
+      url: "/radar-chart",
+      icon: IconChartRadar,
     },
   ],
 }
@@ -49,7 +73,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:!p-1.5">
               <Link href="/">
                 <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">WhySumanCode?</span>
+                <span className="text-base font-semibold">E-commerce Sales</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

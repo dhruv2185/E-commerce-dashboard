@@ -36,9 +36,9 @@ export default function BarChart({ data }: BarChartProps) {
     const svg = d3
       .select(svgRef.current)
       .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+      .attr("height", height + margin.top + margin.bottom )
       .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`)
+      .attr("transform", `translate(${margin.left},${margin.top -15})`)
 
     // X scale
     const x = d3
@@ -85,6 +85,7 @@ export default function BarChart({ data }: BarChartProps) {
       .style("pointer-events", "none")
       .style("font-size", "12px")
       .style("box-shadow", "0 2px 5px rgba(0, 0, 0, 0.1)")
+      .style("color","black")
 
     // Add bars with transition
     svg
@@ -100,11 +101,19 @@ export default function BarChart({ data }: BarChartProps) {
       .attr("fill", (d) => color(d.category) as string)
       .on("mouseover", function (event, d) {
         d3.select(this).attr("opacity", 0.8)
+        const [x, y] = d3.pointer(event, svgRef.current)
+
         tooltip
           .style("visibility", "visible")
           .html(`<strong>${d.category}</strong><br/>Value: ${d.value}`)
-          .style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 28}px`)
+          .style("left", `${x +10}px`)
+          .style("top", `${y +10}px`)
+      }).on("mousemove", function (event) {
+        const [x, y] = d3.pointer(event, svgRef.current)
+      
+        tooltip
+          .style("left", `${x+10}px`)
+          .style("top", `${y+10 }px`)
       })
       .on("mouseout", function () {
         d3.select(this).attr("opacity", 1)
@@ -122,8 +131,8 @@ export default function BarChart({ data }: BarChartProps) {
     svg
       .append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left + 15)
-      .attr("x", 0 - height / 2)
+      .attr("y", 0 - margin.left )
+      .attr("x", 0 - height / 2 )
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .style("font-size", "12px")

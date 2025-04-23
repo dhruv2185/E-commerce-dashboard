@@ -79,6 +79,7 @@ export default function ScatterPlot({ data }: ScatterPlotProps) {
       .style("pointer-events", "none")
       .style("font-size", "12px")
       .style("box-shadow", "0 2px 5px rgba(0, 0, 0, 0.1)")
+      .style("color", "black")
 
     // Add grid lines
     svg
@@ -124,11 +125,12 @@ export default function ScatterPlot({ data }: ScatterPlotProps) {
       .attr("opacity", 0.7)
       .on("mouseover", function (event, d) {
         d3.select(this).attr("r", 8).attr("opacity", 1)
+        const [xPos, yPos] = d3.pointer(event, svgRef.current)
         tooltip
           .style("visibility", "visible")
           .html(`<strong>${d.name}</strong><br/>Price: $${d.price}<br/>Rating: ${d.rating}/5`)
-          .style("left", `${event.pageX + 10}px`)
-          .style("top", `${event.pageY - 28}px`)
+          .style("left", `${xPos + 10}px`)
+          .style("top", `${yPos + 10}px`)
       })
       .on("mouseout", function () {
         d3.select(this).attr("r", 6).attr("opacity", 0.7)

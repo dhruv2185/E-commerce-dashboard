@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select"
 import { productData } from "@/lib/data"
 import BarChart from "@/components/charts/bar-chart"
+import TreemapChart from "@/components/charts/treemap-chart"
 
 export default function Dashboard() {
   const [year, setYear] = useState<string>("2023")
@@ -29,7 +30,7 @@ export default function Dashboard() {
         className="flex flex-col gap-4"
       >
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold tracking-tight">Sales Bar Dashboard</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Sales Tree Map</h1>
           <div className="flex items-center gap-4">
             <Select value={year} onValueChange={setYear}>
               <SelectTrigger className="w-[180px]">
@@ -47,20 +48,21 @@ export default function Dashboard() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Card>
-            <CardHeader>
-              <CardTitle>Sales by Category</CardTitle>
-              <CardDescription>Product category breakdown for {year}</CardDescription>
-            </CardHeader>
-            <CardContent className="h-[400px]">
-              <BarChart data={filteredProductData} />
-            </CardContent>
-          </Card>
-        </motion.div>
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+>
+  <Card>
+    <CardHeader>
+      <CardTitle>Sales by Category and Product</CardTitle>
+      <CardDescription>Treemap breakdown for {year}</CardDescription>
+    </CardHeader>
+    <CardContent className="h-[400px]">
+      <TreemapChart data={filteredProductData} />
+    </CardContent>
+  </Card>
+</motion.div>
+
       </motion.div>
     </div>
   )

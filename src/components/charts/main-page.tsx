@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { salesData, productData } from "@/lib/data"
-import LineChart from "./line-cart"
+import LineChart from "./line-chart"
 import BarChart from "./bar-chart"
 import ScatterPlot from "./scatter-chart"
 

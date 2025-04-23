@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { salesData } from "@/lib/data"
-import LineChart from "@/components/charts/line-cart"
+import LineChart from "@/components/charts/line-chart"
 
 export default function Dashboard() {
   const [year, setYear] = useState<string>("2023")

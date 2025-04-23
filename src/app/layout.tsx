@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "D3 Dashboard",
-  description: "A dashboard for visualizing D3 data.",
+  title: "E-commerce Sales Dashboard",
+  description: "A dashboard for visualizing E-commerce Sales data.",
 }
 
 export default function RootLayout({
