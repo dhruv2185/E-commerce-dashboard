@@ -25,7 +25,7 @@ This project is a dynamic, interactive sales data dashboard built using **React*
 
 ## Installation & Setup
 
-\`\`\`bash
+```bash
 # Clone the repository
 git clone https://github.com/your-username/d3-sales-dashboard.git
 cd d3-sales-dashboard
@@ -35,19 +35,19 @@ pnpm install
 
 # Start the development server
 pnpm dev
-\`\`\`
+```
 
 ### Available Scripts
 
-- \`pnpm dev\` – Start the local development server  
-- \`pnpm build\` – Build the project for production  
-- \`pnpm lint\` – Run ESLint checks  
-- \`pnpm format\` – Format code using Prettier  
-- \`pnpm prepare\` – Setup Git hooks with Husky
+- `pnpm dev` – Start the local development server  
+- `pnpm build` – Build the project for production  
+- `pnpm lint` – Run ESLint checks  
+- `pnpm format` – Format code using Prettier  
+- `pnpm prepare` – Setup Git hooks with Husky
 
 ## Challenges
 
-Integrating D3.js with React presented several challenges due to D3’s imperative approach to DOM manipulation, which conflicts with React’s declarative model. This was resolved using \`useRef\` and \`useEffect\` to safely bridge the two.
+Integrating D3.js with React presented several challenges due to D3’s imperative approach to DOM manipulation, which conflicts with React’s declarative model. This was resolved using `useRef` and `useEffect` to safely bridge the two.
 
 Responsive design required dynamically recalculating chart dimensions and margins on resize events. Implementing smooth animations also demanded careful coordination between D3 transitions and React's rendering cycle.
 
