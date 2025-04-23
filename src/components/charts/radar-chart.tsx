@@ -234,7 +234,6 @@ export default function RadarChart({ data }: RadarChartProps) {
     })
 
     // Add legend
-    const legendPadding = 20
     const legend = svg
       .append("g")
       .attr("class", "legend")

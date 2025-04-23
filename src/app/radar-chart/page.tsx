@@ -1,16 +1,10 @@
 "use client"
 
-import { useState } from "react"
+
 import * as motion from "motion/react-client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+
 import { productData } from "@/lib/data"
 
 import RadarChart from "@/components/charts/radar-chart"

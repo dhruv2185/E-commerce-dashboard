@@ -12,7 +12,6 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { productData } from "@/lib/data"
-import BarChart from "@/components/charts/bar-chart"
 import TreemapChart from "@/components/charts/treemap-chart"
 
 export default function Dashboard() {

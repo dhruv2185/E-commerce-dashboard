@@ -8,7 +8,9 @@ This project is a dynamic, interactive sales data dashboard built using **React*
 
 - 📈 **Bar Chart** – Displays sales data by category  
 - 📉 **Line Chart** – Visualizes monthly sales trends  
-- ⚪ **Scatter Plot** – Compares product price vs rating  
+- ⚪ **Scatter Plot** – Compares product price vs rating
+- 🕸️ **Radar Chart** - Compares multiple product metrics across categories
+- 🌳 **Tree Map** - Visualizes product hierarchy and relative sales volume
 - 🗂️ **Year Filter** – Interactive dropdown to switch datasets by year  
 - 🛠️ **Tooltips** – Hover effects show detailed information  
 - ✨ **Animations** – Smooth transitions between datasets using Framer Motion  

@@ -80,7 +80,7 @@ export default function TreemapChart({ data }: TreemapChartProps) {
       .round(true)
     
     // Apply treemap layout and cast to our extended type
-    treemap(root as any)
+    treemap(root as unknown as d3.HierarchyNode<TreemapNode>)
     
     // Create SVG with proper dimensions and margins
     const svg = d3.select(svgRef.current)
