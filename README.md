@@ -27,7 +27,7 @@ This project is a dynamic, interactive sales data dashboard built using **React*
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/d3-sales-dashboard.git
+git clone https://github.com/dhruv2185/d3-sales-dashboard.git
 cd d3-sales-dashboard
 
 # Install dependencies
